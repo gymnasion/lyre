@@ -30,6 +30,7 @@ class SimpleBox extends Component {
         ColorButton = VioletButton;
         break;
       }
+      //no default
     }
     return (
       <ColorButton

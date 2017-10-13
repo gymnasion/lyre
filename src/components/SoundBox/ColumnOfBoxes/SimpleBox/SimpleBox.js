@@ -39,7 +39,6 @@ class SimpleBox extends Component {
           this.setState(() => {
             return { clicked: !clicked };
           })}
-        color={color}
       />
     );
   }

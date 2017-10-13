@@ -7,6 +7,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
+    "react-test-renderer": "^16.0.0",
     "rebass": "^1.0.4",
     "styled-components": "^2.2.1"
   },
@@ -17,6 +18,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "jest-enzyme": "^4.0.1"
   }
 }

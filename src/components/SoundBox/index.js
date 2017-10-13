@@ -1,1 +1,1 @@
-export { default } from "./SoundBox.js";
+export { default } from './SoundBox.js';

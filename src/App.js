@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import SoundBox from "./components/SoundBox";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import SoundBox from './components/SoundBox';
 
 export const AppWrapper = styled.div`
   text-align: center;

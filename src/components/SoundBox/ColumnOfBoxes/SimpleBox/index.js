@@ -1,1 +1,1 @@
-export { default } from "./SimpleBox.js";
+export { default } from './SimpleBox.js';

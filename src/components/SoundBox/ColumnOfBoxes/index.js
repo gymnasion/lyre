@@ -1,1 +1,1 @@
-export { default } from "./ColumnOfBoxes.js";
+export { default } from './ColumnOfBoxes.js';

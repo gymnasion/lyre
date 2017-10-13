@@ -1,24 +1,8 @@
-import React, { Component } from "react";
-import styled, { css } from "styled-components";
-
-export const Button = styled.button`
-  background: darkgray;
-  border: 0;
-  height: 125px;
-  width: 125px;
-  display: block;
-  margin-top: 2px;
-  margin-bottom: 2px;
-
-  ${props =>
-    props.clicked && props.color === "red" && css`background: #e2818a;`};
-  ${props =>
-    props.clicked && props.color === "violet" && css`background: #a8a2e8;`};
-  ${props =>
-    props.clicked && props.color === "green" && css`background: #98e1d6;`};
-  ${props =>
-    props.clicked && props.color === "sand" && css`background: #f0cc90;`};
-`;
+import React, { Component } from 'react';
+import RedButton from './RedButton';
+import GreenButton from './GreenButton';
+import SandButton from './SandButton';
+import VioletButton from './VioletButton';
 
 class SimpleBox extends Component {
   constructor(props) {
@@ -28,8 +12,27 @@ class SimpleBox extends Component {
   render() {
     const { clicked } = this.state;
     const { color } = this.props;
+    let ColorButton;
+    switch (color) {
+      case 'red': {
+        ColorButton = RedButton;
+        break;
+      }
+      case 'sand': {
+        ColorButton = SandButton;
+        break;
+      }
+      case 'green': {
+        ColorButton = GreenButton;
+        break;
+      }
+      case 'violet': {
+        ColorButton = VioletButton;
+        break;
+      }
+    }
     return (
-      <Button
+      <ColorButton
         clicked={clicked}
         onClick={() =>
           this.setState(() => {

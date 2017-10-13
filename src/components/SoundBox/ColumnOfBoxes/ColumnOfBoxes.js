@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import SimpleBox from "./SimpleBox";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import SimpleBox from './SimpleBox';
 
 export const ColumnOfBoxesWrapper = styled.div`
   width: 125px;

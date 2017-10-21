@@ -3,11 +3,13 @@ import { css } from 'styled-components';
 const ButtonStyles = css`
   background: darkgray;
   border: 0;
-  height: 125px;
-  width: 125px;
+  height: 20vh;
+  width: 20vh;
+  max-height: 20vw;
+  max-width: 20vw;
   display: block;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 `;
 
 export default ButtonStyles;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import SimpleBox from './SimpleBox';
 
 export const ColumnOfBoxesWrapper = styled.div`
-  width: 125px;
-  display: inline-block;
+  display: flex;
+  flex-flow: column wrap;
   margin-right: 1px;
   margin-left: 1px;
 `;

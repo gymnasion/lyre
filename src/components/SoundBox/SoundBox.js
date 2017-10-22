@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import ColumnOfBoxes from './ColumnOfBoxes';
+import styled from 'styled-components';
+
+export const SoundBoxWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+`;
 
 class SoundBox extends Component {
   render() {
@@ -7,7 +13,7 @@ class SoundBox extends Component {
     const columnsOfBoxes = colors.map(color => (
       <ColumnOfBoxes key={color} color={color} />
     ));
-    return <div>{columnsOfBoxes}</div>;
+    return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
   }
 }
 

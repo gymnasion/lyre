@@ -1,7 +1,9 @@
 <h2 align="center">Music box created with React/GraphQL</h2>
 
 <p align="center"> 
-  <img src="https://camo.githubusercontent.com/9d1f1779d6be96fea38b21f14115eb3c18cfc877/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f33743630766e76697874676878666d2f4c5952452d6d696e692e6a70673f7261773d74727565" />
+  <a href="http://lyre.gymnasion.io" target="_blank">
+    <img alt="Lyre" width="200" height="200" src="public/project-lyre.png">
+  </a>
 </p>
 
 <p align="center">

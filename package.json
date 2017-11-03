@@ -9,6 +9,7 @@
     "react-scripts": "1.0.14",
     "react-test-renderer": "^16.0.0",
     "rebass": "^1.0.4",
+    "recompose": "^0.26.0",
     "styled-components": "^2.2.1"
   },
   "scripts": {

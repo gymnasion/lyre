@@ -5,13 +5,8 @@ import SandButton from './SandButton';
 import VioletButton from './VioletButton';
 
 class SimpleBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { clicked: false };
-  }
   render() {
-    const { clicked } = this.state;
-    const { color } = this.props;
+    const { color, clicked, onClick } = this.props;
     let ColorButton;
     switch (color) {
       case 'red': {
@@ -32,15 +27,7 @@ class SimpleBox extends Component {
       }
       //no default
     }
-    return (
-      <ColorButton
-        clicked={clicked}
-        onClick={() =>
-          this.setState(() => {
-            return { clicked: !clicked };
-          })}
-      />
-    );
+    return <ColorButton onClick={onClick} clicked={clicked} />;
   }
 }
 

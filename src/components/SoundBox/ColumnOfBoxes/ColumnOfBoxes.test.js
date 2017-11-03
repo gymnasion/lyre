@@ -8,4 +8,12 @@ describe('<ColumnOfBoxes />', () => {
     const renderedColumnOfBoxes = mount(<ColumnOfBoxes color="red" />);
     expect(renderedColumnOfBoxes.find(SimpleBox)).toHaveLength(4);
   });
+
+  it('ColumnOfBoxes changes state', () => {
+    const renderedColumnOfBoxes = mount(<ColumnOfBoxes color="red" />);
+    const firstSimpleBox = renderedColumnOfBoxes.find(SimpleBox).first();
+    expect(renderedColumnOfBoxes.state().stateValue).toBeFalsy();
+    firstSimpleBox.simulate('click');
+    expect(renderedColumnOfBoxes.state().stateValue).toEqual(1);
+  });
 });

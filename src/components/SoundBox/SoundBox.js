@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import ColumnOfBoxes from './ColumnOfBoxes';
+import ColumnOfButtons from './ColumnOfButtons';
+import GreenButton from './ColumnOfButtons/GreenButton';
+import RedButton from './ColumnOfButtons/RedButton';
+import SandButton from './ColumnOfButtons/SandButton';
+import VioletButton from './ColumnOfButtons/VioletButton';
 import styled from 'styled-components';
 
 export const SoundBoxWrapper = styled.div`
@@ -9,9 +13,9 @@ export const SoundBoxWrapper = styled.div`
 
 class SoundBox extends Component {
   render() {
-    const colors = ['red', 'violet', 'green', 'sand'];
-    const columnsOfBoxes = colors.map(color => (
-      <ColumnOfBoxes key={color} color={color} />
+    const colorButtons = [RedButton, VioletButton, GreenButton, SandButton];
+    const columnsOfBoxes = colorButtons.map((colorButton, index) => (
+      <ColumnOfButtons key={index} colorButton={colorButton} />
     ));
     return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
   }

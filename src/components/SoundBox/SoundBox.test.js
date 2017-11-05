@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import SoundBox from './';
-import RedButton from './ColumnOfBoxes/SimpleBox/RedButton';
-import GreenButton from './ColumnOfBoxes/SimpleBox/GreenButton';
-import SandButton from './ColumnOfBoxes/SimpleBox/SandButton';
-import VioletButton from './ColumnOfBoxes/SimpleBox/VioletButton';
+import RedButton from './ColumnOfButtons/RedButton';
+import GreenButton from './ColumnOfButtons/GreenButton';
+import SandButton from './ColumnOfButtons/SandButton';
+import VioletButton from './ColumnOfButtons/VioletButton';
 
 describe('<SoundBox />', () => {
   it('renders SoundBox with 4 colored columns', () => {

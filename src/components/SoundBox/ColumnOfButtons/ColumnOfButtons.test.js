@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import ColumnOfButtons from './';
 import RedButton from './RedButton';
 
-describe('<ColumnOfButtons />', () => {
+describe('ColumnOfButtons', () => {
   it('renders ColumnOfButtons with 4 color buttons', () => {
     const renderedColumnOfButtons = mount(
       <ColumnOfButtons colorButton={RedButton} />

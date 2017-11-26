@@ -5,6 +5,8 @@ import RedButton from './ColumnOfButtons/RedButton';
 import SandButton from './ColumnOfButtons/SandButton';
 import VioletButton from './ColumnOfButtons/VioletButton';
 import styled from 'styled-components';
+import WAAClock from 'waaclock';
+import audioFiles from './audioFiles';
 
 export const SoundBoxWrapper = styled.div`
   display: flex;
@@ -12,10 +14,31 @@ export const SoundBoxWrapper = styled.div`
 `;
 
 class SoundBox extends Component {
+  componentWillMount() {
+    this.soundBank = {};
+    this.context = new window.AudioContext();
+    this.clock = new WAAClock(this.context);
+    this.clock.start();
+  }
+
   render() {
-    const colorButtons = [RedButton, VioletButton, GreenButton, SandButton];
-    const columnsOfBoxes = colorButtons.map((colorButton, index) => (
-      <ColumnOfButtons key={index} colorButton={colorButton} />
+    const { context, clock, soundBank } = this;
+    const columnParams = [
+      { type: 'arp', colorButton: RedButton },
+      { type: 'bass', colorButton: VioletButton },
+      { type: 'beat', colorButton: GreenButton },
+      { type: 'lead', colorButton: SandButton }
+    ];
+    const columnsOfBoxes = columnParams.map(({ type, colorButton }, index) => (
+      <ColumnOfButtons
+        audioFiles={audioFiles}
+        soundBank={soundBank}
+        context={context}
+        clock={clock}
+        key={index}
+        type={type}
+        colorButton={colorButton}
+      />
     ));
     return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
   }

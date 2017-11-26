@@ -10,7 +10,8 @@
     "react-test-renderer": "^16.0.0",
     "rebass": "^1.0.4",
     "recompose": "^0.26.0",
-    "styled-components": "^2.2.1"
+    "styled-components": "^2.2.1",
+    "waaclock": "^0.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

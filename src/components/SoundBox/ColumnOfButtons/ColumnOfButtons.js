@@ -72,6 +72,10 @@ const startTrack = (type, trackNumber, context, clock, soundBank, event) => {
   return event;
 };
 
+export const ColumnOfButtonsWithState = compose(
+  withReducer('state', 'dispatch', columnReducer, false)
+)(ColumnOfButtons);
+
 export default compose(
   withReducer('state', 'dispatch', columnReducer, false),
   lifecycle({

@@ -1,25 +1,27 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ColumnOfButtons from './';
+import { ColumnOfButtonsWithState } from './ColumnOfButtons.js';
 import RedButton from './RedButton';
 
-describe('ColumnOfButtons', () => {
+describe('ColumnOfButtons with state', () => {
   it('renders ColumnOfButtons with 4 color buttons', () => {
-    const renderedColumnOfButtons = mount(
-      <ColumnOfButtons colorButton={RedButton} />
+    const renderedColumnOfButtonsWithState = mount(
+      <ColumnOfButtonsWithState colorButton={RedButton} />
     );
-    expect(renderedColumnOfButtons.find(RedButton)).toHaveLength(4);
+    expect(renderedColumnOfButtonsWithState.find(RedButton)).toHaveLength(4);
   });
 
   it('ColumnOfButtons changes state on select/unselect button', () => {
-    const renderedColumnOfButtons = mount(
-      <ColumnOfButtons colorButton={RedButton} />
+    const renderedColumnOfButtonsWithState = mount(
+      <ColumnOfButtonsWithState colorButton={RedButton} />
     );
-    const firstSimpleBox = renderedColumnOfButtons.find(RedButton).first();
-    expect(renderedColumnOfButtons.state().stateValue).toBeFalsy();
+    const firstSimpleBox = renderedColumnOfButtonsWithState
+      .find(RedButton)
+      .first();
+    expect(renderedColumnOfButtonsWithState.state().stateValue).toBeFalsy();
     firstSimpleBox.simulate('click');
-    expect(renderedColumnOfButtons.state().stateValue).toEqual(1);
+    expect(renderedColumnOfButtonsWithState.state().stateValue).toEqual(1);
     firstSimpleBox.simulate('click');
-    expect(renderedColumnOfButtons.state().stateValue).toBeFalsy();
+    expect(renderedColumnOfButtonsWithState.state().stateValue).toBeFalsy();
   });
 });

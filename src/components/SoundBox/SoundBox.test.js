@@ -6,7 +6,7 @@ import GreenButton from './ColumnOfButtons/GreenButton';
 import SandButton from './ColumnOfButtons/SandButton';
 import VioletButton from './ColumnOfButtons/VioletButton';
 
-describe('<SoundBox />', () => {
+describe('SoundBox', () => {
   it('renders SoundBox with 4 colored columns', () => {
     const renderedSoundBox = mount(<SoundBox />);
     expect(renderedSoundBox.find(RedButton)).toHaveLength(4);

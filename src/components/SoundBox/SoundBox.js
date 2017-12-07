@@ -16,30 +16,31 @@ export const SoundBoxWrapper = styled.div`
 class SoundBox extends Component {
   componentWillMount() {
     this.soundBank = {};
-    this.context = new window.AudioContext();
-    this.clock = new WAAClock(this.context);
+    const context = new window.AudioContext();
+    this.clock = new WAAClock(context);
     this.clock.start();
   }
 
   render() {
-    const { context, clock, soundBank } = this;
+    const { clock, soundBank } = this;
     const columnParams = [
-      { type: 'arp', colorButton: RedButton },
-      { type: 'bass', colorButton: VioletButton },
-      { type: 'beat', colorButton: GreenButton },
-      { type: 'lead', colorButton: SandButton }
+      { audioType: 'arp', colorButton: RedButton },
+      { audioType: 'bass', colorButton: VioletButton },
+      { audioType: 'beat', colorButton: GreenButton },
+      { audioType: 'lead', colorButton: SandButton }
     ];
-    const columnsOfBoxes = columnParams.map(({ type, colorButton }, index) => (
-      <ColumnOfButtons
-        audioFiles={audioFiles}
-        soundBank={soundBank}
-        context={context}
-        clock={clock}
-        key={index}
-        type={type}
-        colorButton={colorButton}
-      />
-    ));
+    const columnsOfBoxes = columnParams.map(
+      ({ audioType, colorButton }, index) => (
+        <ColumnOfButtons
+          audioFiles={audioFiles}
+          soundBank={soundBank}
+          clock={clock}
+          key={index}
+          audioType={audioType}
+          colorButton={colorButton}
+        />
+      )
+    );
     return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
   }
 }

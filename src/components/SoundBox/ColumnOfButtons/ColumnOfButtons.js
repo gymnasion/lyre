@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { compose, withReducer } from 'recompose';
-import { changeTrack, stopTrack } from './dataLayer';
+import { newTrack } from './dataLayer';
 
 export const ColumnOfButtonsWrapper = styled.div`
   display: flex;
@@ -13,27 +13,15 @@ export const ColumnOfButtonsWrapper = styled.div`
 export const columnReducer = (state, action) => {
   switch (action.type) {
     case 'TOGGLE_SELECTED_BOX': {
-      const { clickedButton, soundBank, audioFiles, clock, audioType } = action;
-      const { selectedButton, getEvent } = state;
-      if (getEvent) {
-        getEvent.then(stopTrack);
+      const { clickedButton, track } = action;
+      const { selectedButton } = state;
+      if (clickedButton === selectedButton) {
+        return { selectedButton: null };
       }
-      const newSelectedButton =
-        clickedButton === selectedButton ? false : clickedButton;
-      if (newSelectedButton) {
-        const getNewEvent = changeTrack(
-          newSelectedButton,
-          soundBank,
-          audioFiles,
-          clock,
-          audioType
-        );
-        return {
-          selectedButton: newSelectedButton,
-          getEvent: getNewEvent
-        };
-      }
-      return { selectedButton: newSelectedButton };
+      return {
+        selectedButton: clickedButton,
+        track
+      };
     }
     default: {
       return state;
@@ -50,20 +38,25 @@ export const ColumnOfButtons = ({
   clock,
   audioType
 }) => {
-  const { selectedButton } = state;
+  const { selectedButton, track } = state;
   const ColorButton = colorButton;
   const colorButtons = [1, 2, 3, 4].map(buttonNumber => (
     <ColorButton
-      onClick={() =>
+      onClick={() => {
         dispatch({
           type: 'TOGGLE_SELECTED_BOX',
           clickedButton: buttonNumber,
-          soundBank,
-          audioFiles,
-          clock,
-          audioType
-        })
-      }
+          track: newTrack(
+            track,
+            buttonNumber,
+            selectedButton,
+            soundBank,
+            audioFiles,
+            clock,
+            audioType
+          )
+        });
+      }}
       selected={buttonNumber === selectedButton}
       key={buttonNumber}
     />
@@ -72,5 +65,5 @@ export const ColumnOfButtons = ({
 };
 
 export default compose(
-  withReducer('state', 'dispatch', columnReducer, { selectedButton: false })
+  withReducer('state', 'dispatch', columnReducer, { selectedButton: null })
 )(ColumnOfButtons);

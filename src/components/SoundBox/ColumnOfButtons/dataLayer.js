@@ -1,9 +1,10 @@
-export const loadTrack = (audioType, trackNumber, context, soundBank, URL) => {
+export const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.open('GET', URL, true);
     request.responseType = 'arraybuffer';
     request.onload = () => {
+      const context = clock.context;
       context.decodeAudioData(request.response, buffer => {
         const duration = buffer.duration;
         const createNode = () => {
@@ -39,7 +40,6 @@ export const changeTrack = (
   clock,
   audioType
 ) => {
-  const context = clock.context;
   if (soundBank[audioType + selectedButton]) {
     return Promise.resolve(
       startTrack(audioType, selectedButton, clock, soundBank)
@@ -47,7 +47,7 @@ export const changeTrack = (
   } else {
     const audioFileIndex = selectedButton - 1;
     const url = audioFiles[audioType][audioFileIndex];
-    return loadTrack(audioType, selectedButton, context, soundBank, url).then(
+    return loadTrack(audioType, selectedButton, clock, soundBank, url).then(
       () =>
         Promise.resolve(startTrack(audioType, selectedButton, clock, soundBank))
     );
@@ -57,4 +57,22 @@ export const changeTrack = (
 export const stopTrack = event => {
   event.clear();
   event.bufferNode.stop();
+};
+
+export const newTrack = (
+  track,
+  clickedButton,
+  selectedButton,
+  soundBank,
+  audioFiles,
+  clock,
+  audioType
+) => {
+  if (track) {
+    track.then(stopTrack);
+  }
+  if (clickedButton === selectedButton) {
+    return null;
+  }
+  return changeTrack(clickedButton, soundBank, audioFiles, clock, audioType);
 };

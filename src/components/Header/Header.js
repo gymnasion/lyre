@@ -1,9 +1,11 @@
 import React from 'react';
 import { Image } from 'rebass';
 import styled from 'styled-components';
-import lyre from './lyre-white.png';
+import lyre from './project-lyre.png';
 
-const LyreLogo = styled(Image)`margin: 0;`;
+const LyreLogo = styled(Image)`
+  margin: 0;
+`;
 
 const LogoTitleWrapper = styled.div`
   display: flex;

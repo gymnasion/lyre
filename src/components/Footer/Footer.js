@@ -1,14 +1,25 @@
 import React from 'react';
-import { Image } from 'rebass';
-import mapicon from './map-pin.png';
+import { Link } from 'rebass';
 import styled from 'styled-components';
 
-const Copyright = styled.p`
+const FooterText = styled.p`
   color: white;
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 2vh;
   margin-top: 0;
+`;
+
+const ProjectLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2vh;
+  margin-top: 0;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const FooterWrapper = styled.div`
@@ -19,30 +30,13 @@ const FooterWrapper = styled.div`
   flex-flow: column nowrap;
 `;
 
-const MapIcon = styled(Image)`margin-bottom: 0.5rem;`;
-
-const LocationText = styled.p`
-  color: white;
-  font-size: 1.6rem;
-  text-align: center;
-  padding-left: 0.2rem;
-  margin: 0 0 0.5rem 0;
-`;
-
-const LocationWrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Footer = () => (
   <FooterWrapper>
-    <LocationWrapper>
-      <MapIcon height="1.6rem" width="1.6rem" src={mapicon} />
-      <LocationText children="Berlin" />
-    </LocationWrapper>
-    <Copyright children="Copyright © 2017" />
+    <FooterText>
+      <ProjectLink href="https://github.com/gymnasion/lyre" children="Github" />{' '}
+      | <ProjectLink href="http://gymnasion.io/" children="Gymnasion" />
+    </FooterText>
+    <FooterText children="Copyright © 2017" />
   </FooterWrapper>
 );
 

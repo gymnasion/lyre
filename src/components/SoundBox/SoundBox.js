@@ -15,33 +15,46 @@ export const SoundBoxWrapper = styled.div`
 
 class SoundBox extends Component {
   componentWillMount() {
-    this.soundBank = {};
-    const context = new window.AudioContext();
-    this.clock = new WAAClock(context);
-    this.clock.start();
+    const AudioContext =
+      window.AudioContext || window.webkitAudioContext || false;
+    if (AudioContext) {
+      this.soundBank = {};
+      const context = new AudioContext();
+      this.clock = new WAAClock(context);
+      this.clock.start();
+    }
   }
 
   render() {
     const { clock, soundBank } = this;
-    const columnParams = [
-      { audioType: 'arp', colorButton: RedButton },
-      { audioType: 'bass', colorButton: VioletButton },
-      { audioType: 'beat', colorButton: GreenButton },
-      { audioType: 'lead', colorButton: SandButton }
-    ];
-    const columnsOfBoxes = columnParams.map(
-      ({ audioType, colorButton }, index) => (
-        <ColumnOfButtons
-          audioFiles={audioFiles}
-          soundBank={soundBank}
-          clock={clock}
-          key={index}
-          audioType={audioType}
-          colorButton={colorButton}
-        />
-      )
+    if (clock) {
+      const columnParams = [
+        { audioType: 'arp', colorButton: RedButton },
+        { audioType: 'bass', colorButton: VioletButton },
+        { audioType: 'beat', colorButton: GreenButton },
+        { audioType: 'lead', colorButton: SandButton }
+      ];
+      const columnsOfBoxes = columnParams.map(
+        ({ audioType, colorButton }, index) => (
+          <ColumnOfButtons
+            audioFiles={audioFiles}
+            soundBank={soundBank}
+            clock={clock}
+            key={index}
+            audioType={audioType}
+            colorButton={colorButton}
+          />
+        )
+      );
+      return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
+    }
+    return (
+      <h1>
+        Sorry, but the Web Audio API is not supported by your browser. Please,
+        consider upgrading to the latest version or downloading Google Chrome or
+        Mozilla Firefox
+      </h1>
     );
-    return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
   }
 }
 

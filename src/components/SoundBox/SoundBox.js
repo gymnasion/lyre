@@ -28,7 +28,7 @@ class SoundBox extends Component {
 
   render() {
     const { clock, soundBank } = this;
-    if (false) {
+    if (clock) {
       const columnParams = [
         { audioType: 'arp', colorButton: RedButton },
         { audioType: 'bass', colorButton: VioletButton },

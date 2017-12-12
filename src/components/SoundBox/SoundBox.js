@@ -7,6 +7,7 @@ import VioletButton from './ColumnOfButtons/VioletButton';
 import styled from 'styled-components';
 import WAAClock from 'waaclock';
 import audioFiles from './audioFiles';
+import ErrorMessage from './ErrorMessage';
 
 export const SoundBoxWrapper = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ class SoundBox extends Component {
 
   render() {
     const { clock, soundBank } = this;
-    if (clock) {
+    if (false) {
       const columnParams = [
         { audioType: 'arp', colorButton: RedButton },
         { audioType: 'bass', colorButton: VioletButton },
@@ -48,13 +49,7 @@ class SoundBox extends Component {
       );
       return <SoundBoxWrapper>{columnsOfBoxes}</SoundBoxWrapper>;
     }
-    return (
-      <h1>
-        Sorry, but the Web Audio API is not supported by your browser. Please,
-        consider upgrading to the latest version or downloading Google Chrome or
-        Mozilla Firefox
-      </h1>
-    );
+    return <ErrorMessage />;
   }
 }
 

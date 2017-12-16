@@ -15,6 +15,11 @@ describe('SoundBox', () => {
     expect(renderedSoundBox.find(SandButton)).toHaveLength(4);
     expect(renderedSoundBox.find(VioletButton)).toHaveLength(4);
   });
+  it('renders SoundBox if browser uses webkitAudioContext', () => {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    const renderedSoundBox = mount(<SoundBox />);
+    expect(renderedSoundBox.find(RedButton)).toHaveLength(4);
+  });
   it('renders error message if browser does not support Web Audio', () => {
     window.AudioContext = undefined;
     const renderedSoundBox = mount(<SoundBox />);

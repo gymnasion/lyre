@@ -47,7 +47,8 @@ const changeTrack = (
   soundBank,
   audioFiles,
   clock,
-  audioType
+  audioType,
+  dispatch
 ) => {
   if (soundBank[audioType + selectedButton]) {
     restartTracks(clock);
@@ -57,9 +58,11 @@ const changeTrack = (
   } else {
     const audioFileIndex = selectedButton - 1;
     const url = audioFiles[audioType][audioFileIndex];
+    dispatch({ type: 'TOGGLE_LOADING_STATE' });
     return loadTrack(audioType, selectedButton, clock, soundBank, url).then(
       () => {
         restartTracks(clock);
+        dispatch({ type: 'TOGGLE_LOADING_STATE' });
         return Promise.resolve(
           startTrack(audioType, selectedButton, clock, soundBank)
         );
@@ -80,7 +83,8 @@ export const newTrack = (
   soundBank,
   audioFiles,
   clock,
-  audioType
+  audioType,
+  dispatch
 ) => {
   if (track) {
     track.then(stopTrack);
@@ -88,5 +92,12 @@ export const newTrack = (
   if (clickedButton === selectedButton) {
     return null;
   }
-  return changeTrack(clickedButton, soundBank, audioFiles, clock, audioType);
+  return changeTrack(
+    clickedButton,
+    soundBank,
+    audioFiles,
+    clock,
+    audioType,
+    dispatch
+  );
 };

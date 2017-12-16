@@ -19,9 +19,14 @@ export const columnReducer = (state, action) => {
         return { selectedButton: null };
       }
       return {
+        ...state,
         selectedButton: clickedButton,
         track
       };
+    }
+    case 'TOGGLE_LOADING_STATE': {
+      const { isLoading } = state;
+      return { ...state, isLoading: !isLoading };
     }
     default: {
       return state;
@@ -38,7 +43,7 @@ export const ColumnOfButtons = ({
   clock,
   audioType
 }) => {
-  const { selectedButton, track } = state;
+  const { selectedButton, track, isLoading } = state;
   const ColorButton = colorButton;
   const colorButtons = [1, 2, 3, 4].map(buttonNumber => (
     <ColorButton
@@ -53,10 +58,12 @@ export const ColumnOfButtons = ({
             soundBank,
             audioFiles,
             clock,
-            audioType
+            audioType,
+            dispatch
           )
         });
       }}
+      isLoading={!!isLoading}
       selected={buttonNumber === selectedButton}
       key={buttonNumber}
     />

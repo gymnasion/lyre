@@ -1,1 +1,1 @@
-export { default } from './ButtonStyles.js';
+export { getBlinker, ButtonStyles } from './ButtonStyles.js';

@@ -22,6 +22,7 @@ export const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
 };
 
 export const startTrack = (audioType, trackNumber, clock, soundBank) => {
+  restartTracks(clock);
   const context = clock.context;
   const event = clock
     .callbackAtTime(event => {
@@ -31,6 +32,15 @@ export const startTrack = (audioType, trackNumber, clock, soundBank) => {
     }, context.currentTime)
     .repeat(soundBank[audioType + trackNumber].duration);
   return event;
+};
+
+export const restartTracks = clock => {
+  const events = clock._events;
+  const context = clock.context;
+  events.forEach(event => {
+    event.bufferNode.stop();
+    event.schedule(context.currentTime);
+  });
 };
 
 export const changeTrack = (

@@ -25,8 +25,8 @@ export const columnReducer = (state, action) => {
       };
     }
     case 'TOGGLE_LOADING_STATE': {
-      const { isLoading } = state;
-      return { ...state, isLoading: !isLoading };
+      const { isLoading } = action;
+      return { ...state, isLoading };
     }
     default: {
       return state;
@@ -63,7 +63,7 @@ export const ColumnOfButtons = ({
           )
         });
       }}
-      isLoading={!!isLoading}
+      isLoading={isLoading}
       selected={buttonNumber === selectedButton}
       key={buttonNumber}
     />

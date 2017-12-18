@@ -58,11 +58,11 @@ const changeTrack = (
   } else {
     const audioFileIndex = selectedButton - 1;
     const url = audioFiles[audioType][audioFileIndex];
-    dispatch({ type: 'TOGGLE_LOADING_STATE' });
+    dispatch({ type: 'TOGGLE_LOADING_STATE', isLoading: true });
     return loadTrack(audioType, selectedButton, clock, soundBank, url).then(
       () => {
         restartTracks(clock);
-        dispatch({ type: 'TOGGLE_LOADING_STATE' });
+        dispatch({ type: 'TOGGLE_LOADING_STATE', isLoading: false });
         return Promise.resolve(
           startTrack(audioType, selectedButton, clock, soundBank)
         );

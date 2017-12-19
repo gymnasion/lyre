@@ -8,9 +8,10 @@ export const AppWrapper = styled.div`
   background-color: #666666;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: 100vh;
 `;
 
 class App extends Component {

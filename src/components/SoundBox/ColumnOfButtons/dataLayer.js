@@ -1,4 +1,4 @@
-export const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
+const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.open('GET', URL, true);
@@ -21,7 +21,7 @@ export const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
   });
 };
 
-export const startTrack = (audioType, trackNumber, clock, soundBank) => {
+const startTrack = (audioType, trackNumber, clock, soundBank) => {
   const context = clock.context;
   const event = clock
     .callbackAtTime(event => {
@@ -33,7 +33,16 @@ export const startTrack = (audioType, trackNumber, clock, soundBank) => {
   return event;
 };
 
-export const changeTrack = (
+const restartTracks = clock => {
+  const events = clock._events;
+  const context = clock.context;
+  events.forEach(event => {
+    event.bufferNode.stop();
+    event.schedule(context.currentTime);
+  });
+};
+
+const changeTrack = (
   selectedButton,
   soundBank,
   audioFiles,
@@ -41,6 +50,7 @@ export const changeTrack = (
   audioType
 ) => {
   if (soundBank[audioType + selectedButton]) {
+    restartTracks(clock);
     return Promise.resolve(
       startTrack(audioType, selectedButton, clock, soundBank)
     );
@@ -48,13 +58,17 @@ export const changeTrack = (
     const audioFileIndex = selectedButton - 1;
     const url = audioFiles[audioType][audioFileIndex];
     return loadTrack(audioType, selectedButton, clock, soundBank, url).then(
-      () =>
-        Promise.resolve(startTrack(audioType, selectedButton, clock, soundBank))
+      () => {
+        restartTracks(clock);
+        return Promise.resolve(
+          startTrack(audioType, selectedButton, clock, soundBank)
+        );
+      }
     );
   }
 };
 
-export const stopTrack = event => {
+const stopTrack = event => {
   event.clear();
   event.bufferNode.stop();
 };

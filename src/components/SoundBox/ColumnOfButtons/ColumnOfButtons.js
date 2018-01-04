@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { compose, withReducer } from 'recompose';
-import { newTrack } from './dataLayer';
+import { getNextTrack } from './dataLayer';
 
 export const ColumnOfButtonsWrapper = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ export const ColumnOfButtons = ({
         dispatch({
           type: 'TOGGLE_SELECTED_BOX',
           clickedButton: buttonNumber,
-          track: newTrack(
+          track: getNextTrack(
             track,
             buttonNumber,
             selectedButton,

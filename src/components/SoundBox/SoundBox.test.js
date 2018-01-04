@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import SoundBox from './';
 import RedButton from './ColumnOfButtons/RedButton';
 import GreenButton from './ColumnOfButtons/GreenButton';
@@ -8,6 +9,12 @@ import VioletButton from './ColumnOfButtons/VioletButton';
 import ErrorMessage from './ErrorMessage';
 
 describe('SoundBox', () => {
+
+  it('renders SoundBox correctly', () => {
+    const renderedSoundBox = mount(<SoundBox />);
+    expect(toJson(renderedSoundBox)).toMatchSnapshot();
+  });
+
   it('renders SoundBox with 4 colored columns', () => {
     const renderedSoundBox = mount(<SoundBox />);
     expect(renderedSoundBox.find(RedButton)).toHaveLength(4);

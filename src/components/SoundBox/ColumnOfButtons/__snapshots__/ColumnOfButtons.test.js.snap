@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnOfButtons with state renders ColumnOfButtons correctly 1`] = `
+<withReducer(Component)
+  colorButton={[Function]}
+>
+  <Component
+    colorButton={[Function]}
+    dispatch={[Function]}
+    state={
+      Object {
+        "selectedButton": null,
+      }
+    }
+  >
+    <styled.div>
+      <div
+        className="sc-bdVaJa cMfvsI"
+      >
+        <styled.button
+          key="1"
+          onClick={[Function]}
+          selected={false}
+        >
+          <button
+            className="sc-bwzfXH kGMlao"
+            onClick={[Function]}
+            selected={false}
+          />
+        </styled.button>
+        <styled.button
+          key="2"
+          onClick={[Function]}
+          selected={false}
+        >
+          <button
+            className="sc-bwzfXH kGMlao"
+            onClick={[Function]}
+            selected={false}
+          />
+        </styled.button>
+        <styled.button
+          key="3"
+          onClick={[Function]}
+          selected={false}
+        >
+          <button
+            className="sc-bwzfXH kGMlao"
+            onClick={[Function]}
+            selected={false}
+          />
+        </styled.button>
+        <styled.button
+          key="4"
+          onClick={[Function]}
+          selected={false}
+        >
+          <button
+            className="sc-bwzfXH kGMlao"
+            onClick={[Function]}
+            selected={false}
+          />
+        </styled.button>
+      </div>
+    </styled.div>
+  </Component>
+</withReducer(Component)>
+`;

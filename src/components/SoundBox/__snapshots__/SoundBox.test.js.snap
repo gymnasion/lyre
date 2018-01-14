@@ -1,0 +1,688 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SoundBox renders SoundBox correctly 1`] = `
+<SoundBox>
+  <styled.div>
+    <div
+      className="sc-gzVnrw jHcFPD"
+    >
+      <withReducer(Component)
+        audioFiles={
+          Object {
+            "arp": Array [
+              "arp-1.wav",
+              "arp-2.wav",
+              "arp-3.wav",
+              "arp-4.wav",
+            ],
+            "bass": Array [
+              "bass-1.wav",
+              "bass-2.wav",
+              "bass-3.wav",
+              "bass-4.wav",
+            ],
+            "beat": Array [
+              "beat-1.wav",
+              "beat-2.wav",
+              "beat-3.wav",
+              "beat-4.wav",
+            ],
+            "lead": Array [
+              "lead-1.wav",
+              "lead-2.wav",
+              "lead-3.wav",
+              "lead-4.wav",
+            ],
+          }
+        }
+        audioType="arp"
+        clock={
+           {
+            "_clockNode": Object {
+              "inputs": Array [],
+              "name": "ScriptProcessorNode",
+            },
+            "_events": Array [],
+            "_started": true,
+            "context": Object {
+              "inputs": Array [
+                Object {
+                  "inputs": Array [],
+                  "name": "ScriptProcessorNode",
+                },
+              ],
+              "name": "AudioDestinationNode",
+            },
+            "tickMethod": "ScriptProcessorNode",
+            "toleranceEarly": 0.001,
+            "toleranceLate": 0.1,
+          }
+        }
+        colorButton={[Function]}
+        key="0"
+        soundBank={Object {}}
+      >
+        <Component
+          audioFiles={
+            Object {
+              "arp": Array [
+                "arp-1.wav",
+                "arp-2.wav",
+                "arp-3.wav",
+                "arp-4.wav",
+              ],
+              "bass": Array [
+                "bass-1.wav",
+                "bass-2.wav",
+                "bass-3.wav",
+                "bass-4.wav",
+              ],
+              "beat": Array [
+                "beat-1.wav",
+                "beat-2.wav",
+                "beat-3.wav",
+                "beat-4.wav",
+              ],
+              "lead": Array [
+                "lead-1.wav",
+                "lead-2.wav",
+                "lead-3.wav",
+                "lead-4.wav",
+              ],
+            }
+          }
+          audioType="arp"
+          clock={
+             {
+              "_clockNode": Object {
+                "inputs": Array [],
+                "name": "ScriptProcessorNode",
+              },
+              "_events": Array [],
+              "_started": true,
+              "context": Object {
+                "inputs": Array [
+                  Object {
+                    "inputs": Array [],
+                    "name": "ScriptProcessorNode",
+                  },
+                ],
+                "name": "AudioDestinationNode",
+              },
+              "tickMethod": "ScriptProcessorNode",
+              "toleranceEarly": 0.001,
+              "toleranceLate": 0.1,
+            }
+          }
+          colorButton={[Function]}
+          dispatch={[Function]}
+          soundBank={Object {}}
+          state={
+            Object {
+              "selectedButton": null,
+            }
+          }
+        >
+          <styled.div>
+            <div
+              className="sc-bdVaJa cMfvsI"
+            >
+              <styled.button
+                key="1"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-htpNat kFDitE"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="2"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-htpNat kFDitE"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="3"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-htpNat kFDitE"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="4"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-htpNat kFDitE"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+            </div>
+          </styled.div>
+        </Component>
+      </withReducer(Component)>
+      <withReducer(Component)
+        audioFiles={
+          Object {
+            "arp": Array [
+              "arp-1.wav",
+              "arp-2.wav",
+              "arp-3.wav",
+              "arp-4.wav",
+            ],
+            "bass": Array [
+              "bass-1.wav",
+              "bass-2.wav",
+              "bass-3.wav",
+              "bass-4.wav",
+            ],
+            "beat": Array [
+              "beat-1.wav",
+              "beat-2.wav",
+              "beat-3.wav",
+              "beat-4.wav",
+            ],
+            "lead": Array [
+              "lead-1.wav",
+              "lead-2.wav",
+              "lead-3.wav",
+              "lead-4.wav",
+            ],
+          }
+        }
+        audioType="bass"
+        clock={
+           {
+            "_clockNode": Object {
+              "inputs": Array [],
+              "name": "ScriptProcessorNode",
+            },
+            "_events": Array [],
+            "_started": true,
+            "context": Object {
+              "inputs": Array [
+                Object {
+                  "inputs": Array [],
+                  "name": "ScriptProcessorNode",
+                },
+              ],
+              "name": "AudioDestinationNode",
+            },
+            "tickMethod": "ScriptProcessorNode",
+            "toleranceEarly": 0.001,
+            "toleranceLate": 0.1,
+          }
+        }
+        colorButton={[Function]}
+        key="1"
+        soundBank={Object {}}
+      >
+        <Component
+          audioFiles={
+            Object {
+              "arp": Array [
+                "arp-1.wav",
+                "arp-2.wav",
+                "arp-3.wav",
+                "arp-4.wav",
+              ],
+              "bass": Array [
+                "bass-1.wav",
+                "bass-2.wav",
+                "bass-3.wav",
+                "bass-4.wav",
+              ],
+              "beat": Array [
+                "beat-1.wav",
+                "beat-2.wav",
+                "beat-3.wav",
+                "beat-4.wav",
+              ],
+              "lead": Array [
+                "lead-1.wav",
+                "lead-2.wav",
+                "lead-3.wav",
+                "lead-4.wav",
+              ],
+            }
+          }
+          audioType="bass"
+          clock={
+             {
+              "_clockNode": Object {
+                "inputs": Array [],
+                "name": "ScriptProcessorNode",
+              },
+              "_events": Array [],
+              "_started": true,
+              "context": Object {
+                "inputs": Array [
+                  Object {
+                    "inputs": Array [],
+                    "name": "ScriptProcessorNode",
+                  },
+                ],
+                "name": "AudioDestinationNode",
+              },
+              "tickMethod": "ScriptProcessorNode",
+              "toleranceEarly": 0.001,
+              "toleranceLate": 0.1,
+            }
+          }
+          colorButton={[Function]}
+          dispatch={[Function]}
+          soundBank={Object {}}
+          state={
+            Object {
+              "selectedButton": null,
+            }
+          }
+        >
+          <styled.div>
+            <div
+              className="sc-bdVaJa cMfvsI"
+            >
+              <styled.button
+                key="1"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-ifAKCX hnEUDr"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="2"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-ifAKCX hnEUDr"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="3"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-ifAKCX hnEUDr"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="4"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-ifAKCX hnEUDr"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+            </div>
+          </styled.div>
+        </Component>
+      </withReducer(Component)>
+      <withReducer(Component)
+        audioFiles={
+          Object {
+            "arp": Array [
+              "arp-1.wav",
+              "arp-2.wav",
+              "arp-3.wav",
+              "arp-4.wav",
+            ],
+            "bass": Array [
+              "bass-1.wav",
+              "bass-2.wav",
+              "bass-3.wav",
+              "bass-4.wav",
+            ],
+            "beat": Array [
+              "beat-1.wav",
+              "beat-2.wav",
+              "beat-3.wav",
+              "beat-4.wav",
+            ],
+            "lead": Array [
+              "lead-1.wav",
+              "lead-2.wav",
+              "lead-3.wav",
+              "lead-4.wav",
+            ],
+          }
+        }
+        audioType="beat"
+        clock={
+           {
+            "_clockNode": Object {
+              "inputs": Array [],
+              "name": "ScriptProcessorNode",
+            },
+            "_events": Array [],
+            "_started": true,
+            "context": Object {
+              "inputs": Array [
+                Object {
+                  "inputs": Array [],
+                  "name": "ScriptProcessorNode",
+                },
+              ],
+              "name": "AudioDestinationNode",
+            },
+            "tickMethod": "ScriptProcessorNode",
+            "toleranceEarly": 0.001,
+            "toleranceLate": 0.1,
+          }
+        }
+        colorButton={[Function]}
+        key="2"
+        soundBank={Object {}}
+      >
+        <Component
+          audioFiles={
+            Object {
+              "arp": Array [
+                "arp-1.wav",
+                "arp-2.wav",
+                "arp-3.wav",
+                "arp-4.wav",
+              ],
+              "bass": Array [
+                "bass-1.wav",
+                "bass-2.wav",
+                "bass-3.wav",
+                "bass-4.wav",
+              ],
+              "beat": Array [
+                "beat-1.wav",
+                "beat-2.wav",
+                "beat-3.wav",
+                "beat-4.wav",
+              ],
+              "lead": Array [
+                "lead-1.wav",
+                "lead-2.wav",
+                "lead-3.wav",
+                "lead-4.wav",
+              ],
+            }
+          }
+          audioType="beat"
+          clock={
+             {
+              "_clockNode": Object {
+                "inputs": Array [],
+                "name": "ScriptProcessorNode",
+              },
+              "_events": Array [],
+              "_started": true,
+              "context": Object {
+                "inputs": Array [
+                  Object {
+                    "inputs": Array [],
+                    "name": "ScriptProcessorNode",
+                  },
+                ],
+                "name": "AudioDestinationNode",
+              },
+              "tickMethod": "ScriptProcessorNode",
+              "toleranceEarly": 0.001,
+              "toleranceLate": 0.1,
+            }
+          }
+          colorButton={[Function]}
+          dispatch={[Function]}
+          soundBank={Object {}}
+          state={
+            Object {
+              "selectedButton": null,
+            }
+          }
+        >
+          <styled.div>
+            <div
+              className="sc-bdVaJa cMfvsI"
+            >
+              <styled.button
+                key="1"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bwzfXH kGMlao"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="2"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bwzfXH kGMlao"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="3"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bwzfXH kGMlao"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="4"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bwzfXH kGMlao"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+            </div>
+          </styled.div>
+        </Component>
+      </withReducer(Component)>
+      <withReducer(Component)
+        audioFiles={
+          Object {
+            "arp": Array [
+              "arp-1.wav",
+              "arp-2.wav",
+              "arp-3.wav",
+              "arp-4.wav",
+            ],
+            "bass": Array [
+              "bass-1.wav",
+              "bass-2.wav",
+              "bass-3.wav",
+              "bass-4.wav",
+            ],
+            "beat": Array [
+              "beat-1.wav",
+              "beat-2.wav",
+              "beat-3.wav",
+              "beat-4.wav",
+            ],
+            "lead": Array [
+              "lead-1.wav",
+              "lead-2.wav",
+              "lead-3.wav",
+              "lead-4.wav",
+            ],
+          }
+        }
+        audioType="lead"
+        clock={
+           {
+            "_clockNode": Object {
+              "inputs": Array [],
+              "name": "ScriptProcessorNode",
+            },
+            "_events": Array [],
+            "_started": true,
+            "context": Object {
+              "inputs": Array [
+                Object {
+                  "inputs": Array [],
+                  "name": "ScriptProcessorNode",
+                },
+              ],
+              "name": "AudioDestinationNode",
+            },
+            "tickMethod": "ScriptProcessorNode",
+            "toleranceEarly": 0.001,
+            "toleranceLate": 0.1,
+          }
+        }
+        colorButton={[Function]}
+        key="3"
+        soundBank={Object {}}
+      >
+        <Component
+          audioFiles={
+            Object {
+              "arp": Array [
+                "arp-1.wav",
+                "arp-2.wav",
+                "arp-3.wav",
+                "arp-4.wav",
+              ],
+              "bass": Array [
+                "bass-1.wav",
+                "bass-2.wav",
+                "bass-3.wav",
+                "bass-4.wav",
+              ],
+              "beat": Array [
+                "beat-1.wav",
+                "beat-2.wav",
+                "beat-3.wav",
+                "beat-4.wav",
+              ],
+              "lead": Array [
+                "lead-1.wav",
+                "lead-2.wav",
+                "lead-3.wav",
+                "lead-4.wav",
+              ],
+            }
+          }
+          audioType="lead"
+          clock={
+             {
+              "_clockNode": Object {
+                "inputs": Array [],
+                "name": "ScriptProcessorNode",
+              },
+              "_events": Array [],
+              "_started": true,
+              "context": Object {
+                "inputs": Array [
+                  Object {
+                    "inputs": Array [],
+                    "name": "ScriptProcessorNode",
+                  },
+                ],
+                "name": "AudioDestinationNode",
+              },
+              "tickMethod": "ScriptProcessorNode",
+              "toleranceEarly": 0.001,
+              "toleranceLate": 0.1,
+            }
+          }
+          colorButton={[Function]}
+          dispatch={[Function]}
+          soundBank={Object {}}
+          state={
+            Object {
+              "selectedButton": null,
+            }
+          }
+        >
+          <styled.div>
+            <div
+              className="sc-bdVaJa cMfvsI"
+            >
+              <styled.button
+                key="1"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bxivhb hTnTTK"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="2"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bxivhb hTnTTK"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="3"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bxivhb hTnTTK"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+              <styled.button
+                key="4"
+                onClick={[Function]}
+                selected={false}
+              >
+                <button
+                  className="sc-bxivhb hTnTTK"
+                  onClick={[Function]}
+                  selected={false}
+                />
+              </styled.button>
+            </div>
+          </styled.div>
+        </Component>
+      </withReducer(Component)>
+    </div>
+  </styled.div>
+</SoundBox>
+`;

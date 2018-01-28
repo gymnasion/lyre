@@ -1,4 +1,4 @@
-const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
+const loadTrack = (trackName, clock, soundBank, URL) => {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
     request.open('GET', URL, true);
@@ -13,7 +13,7 @@ const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
           node.connect(context.destination);
           return node;
         };
-        soundBank[audioType + trackNumber] = { createNode, duration };
+        soundBank[trackName] = { createNode, duration };
         resolve();
       });
     };
@@ -21,15 +21,16 @@ const loadTrack = (audioType, trackNumber, clock, soundBank, URL) => {
   });
 };
 
-const startTrack = (audioType, trackNumber, clock, soundBank) => {
+const startTrack = (trackName, clock, soundBank) => {
   const context = clock.context;
+  const track = soundBank[trackName];
   const event = clock
     .callbackAtTime(event => {
-      const bufferNode = soundBank[audioType + trackNumber].createNode();
+      const bufferNode = track.createNode();
       bufferNode.start();
       event.bufferNode = bufferNode;
     }, context.currentTime)
-    .repeat(soundBank[audioType + trackNumber].duration);
+    .repeat(track.duration);
   return event;
 };
 
@@ -42,45 +43,20 @@ const restartTracks = clock => {
   });
 };
 
-const changeTrack = (
-  selectedButton,
-  soundBank,
-  audioFiles,
-  clock,
-  audioType
-) => {
-  if (soundBank[audioType + selectedButton]) {
-    restartTracks(clock);
-    return Promise.resolve(
-      startTrack(audioType, selectedButton, clock, soundBank)
-    );
-  } else {
-    const audioFileIndex = selectedButton - 1;
-    const url = audioFiles[audioType][audioFileIndex];
-    return loadTrack(audioType, selectedButton, clock, soundBank, url).then(
-      () => {
-        restartTracks(clock);
-        return Promise.resolve(
-          startTrack(audioType, selectedButton, clock, soundBank)
-        );
-      }
-    );
-  }
-};
-
 const stopTrack = event => {
   event.clear();
   event.bufferNode.stop();
 };
 
-export const newTrack = (
+export const getNextTrack = (
   track,
   clickedButton,
   selectedButton,
   soundBank,
   audioFiles,
   clock,
-  audioType
+  audioType,
+  dispatch
 ) => {
   if (track) {
     track.then(stopTrack);
@@ -88,5 +64,24 @@ export const newTrack = (
   if (clickedButton === selectedButton) {
     return null;
   }
-  return changeTrack(clickedButton, soundBank, audioFiles, clock, audioType);
+  const trackName = audioType + clickedButton;
+  if (soundBank[trackName]) {
+    restartTracks(clock);
+    return Promise.resolve(
+      startTrack(trackName, clock, soundBank)
+    );
+  } else {
+    const audioFileIndex = clickedButton - 1;
+    const url = audioFiles[audioType][audioFileIndex];
+    dispatch({ type: 'TOGGLE_LOADING_STATE', isLoading: true });
+    return loadTrack(trackName, clock, soundBank, url).then(
+      () => {
+        restartTracks(clock);
+        dispatch({ type: 'TOGGLE_LOADING_STATE', isLoading: false });
+        return Promise.resolve(
+          startTrack(trackName, clock, soundBank)
+        );
+      }
+    );
+  }
 };

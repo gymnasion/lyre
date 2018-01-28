@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { compose, withReducer } from 'recompose';
-import { newTrack } from './dataLayer';
+import { getNextTrack } from './dataLayer';
 
 export const ColumnOfButtonsWrapper = styled.div`
   display: flex;
@@ -19,9 +19,14 @@ export const columnReducer = (state, action) => {
         return { selectedButton: null };
       }
       return {
+        ...state,
         selectedButton: clickedButton,
         track
       };
+    }
+    case 'TOGGLE_LOADING_STATE': {
+      const { isLoading } = action;
+      return { ...state, isLoading };
     }
     default: {
       return state;
@@ -38,7 +43,7 @@ export const ColumnOfButtons = ({
   clock,
   audioType
 }) => {
-  const { selectedButton, track } = state;
+  const { selectedButton, track, isLoading } = state;
   const ColorButton = colorButton;
   const colorButtons = [1, 2, 3, 4].map(buttonNumber => (
     <ColorButton
@@ -46,17 +51,19 @@ export const ColumnOfButtons = ({
         dispatch({
           type: 'TOGGLE_SELECTED_BOX',
           clickedButton: buttonNumber,
-          track: newTrack(
+          track: getNextTrack(
             track,
             buttonNumber,
             selectedButton,
             soundBank,
             audioFiles,
             clock,
-            audioType
+            audioType,
+            dispatch
           )
         });
       }}
+      isLoading={isLoading}
       selected={buttonNumber === selectedButton}
       key={buttonNumber}
     />

@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-import ButtonStyles from '../../../../styles/ButtonStyles';
+import { css } from 'styled-components';
+import getButton from '../getButton';
 
-const SandButton = styled.button`
-  ${ButtonStyles} ${props => props.selected && css`background: #f0cc90;`};
-`;
+const sandColor = css`#f0cc90`;
+const SandButton = getButton(sandColor);
 
 export default SandButton;

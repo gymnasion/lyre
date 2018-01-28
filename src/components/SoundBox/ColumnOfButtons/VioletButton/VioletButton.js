@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-import ButtonStyles from '../../../../styles/ButtonStyles';
+import { css } from 'styled-components';
+import getButton from '../getButton';
 
-const VioletButton = styled.button`
-  ${ButtonStyles} ${props => props.selected && css`background: #a8a2e8;`};
-`;
+const violetColor = css`#a8a2e8`;
+const VioletButton = getButton(violetColor);
 
 export default VioletButton;

@@ -1,6 +1,15 @@
-import { css } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
-const ButtonStyles = css`
+export const getBlinker = color => keyframes`
+  from {
+    background: ${color};
+  }
+  to {
+    transform: darkgray;
+  }
+`;
+
+export const ButtonStyles = css`
   background: darkgray;
   border: 0;
   height: 20vh;
@@ -11,5 +20,3 @@ const ButtonStyles = css`
   margin-top: 1px;
   margin-bottom: 1px;
 `;
-
-export default ButtonStyles;

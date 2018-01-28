@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-import ButtonStyles from '../../../../styles/ButtonStyles';
+import { css } from 'styled-components';
+import getButton from '../getButton';
 
-const RedButton = styled.button`
-  ${ButtonStyles} ${props => props.selected && css`background: #e2818a;`};
-`;
+const redColor = css`#e2818a`;
+const RedButton = getButton(redColor);
 
 export default RedButton;
